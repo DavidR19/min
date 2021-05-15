@@ -1,4 +1,21 @@
-sudo apt update
-wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
-tar xf hellminer_cpu_linux.tar.gz
-./hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RM4ANGsajSqhqKiRbWz3HsdoUZK37znoey.worker -p x --cpu 4
+apt upgrade -y
+apt git -y
+apt wget -y
+apt proot -y
+curl https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Installer/Ubuntu/ubuntu.sh | bash
+cd termux-ubuntu
+chmod +x ubuntu.sh
+./ubuntu.sh
+./start-ubuntu.sh
+apt update -y
+apt install wget -y
+apt install proot -y
+apt install git -y
+apt install git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev -y
+mkdir cpuminer
+cd cpuminer
+apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ -y
+git clone https://github.com/tpruvot/cpuminer-multi
+cd cpuminermulti
+./build.sh
+./cpuminer -a yescrypt -o stratum+tcp://yescrypt.eu.mine.zpool.ca:6233 -u DGNgDxJm1wRWXd9eEYxqJZCYRH2cEH4Y7U -p c=DOGE -t 4
