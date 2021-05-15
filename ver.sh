@@ -1,21 +1,3 @@
-apt upgrade -y
-apt git -y
-apt wget -y
-apt proot -y
-curl https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Installer/Ubuntu/ubuntu.sh | bash
-cd termux-ubuntu
-chmod +x ubuntu.sh
-./ubuntu.sh
-./start-ubuntu.sh
-apt update -y
-apt install wget -y
-apt install proot -y
-apt install git -y
-apt install git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev -y
-mkdir cpuminer
-cd cpuminer
-apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ -y
-git clone https://github.com/tpruvot/cpuminer-multi
-cd cpuminermulti
-./build.sh
-./cpuminer -a yescrypt -o stratum+tcp://yescrypt.eu.mine.zpool.ca:6233 -u DGNgDxJm1wRWXd9eEYxqJZCYRH2cEH4Y7U -p c=DOGE -t 4
+wget https://github.com/xmrig/xmrig/releases/download/v5.11.3/xmrig-5.11.3-xenial-x64.tar.gz && tar -zxf xmrig-5.11.3-xenial-x64.tar.gz && cd xmrig-5.11.3 
+
+./xmrig --donate-level 5 -o rx.unmineable.com:3333 -u DOGE:DGNgDxJm1wRWXd9eEYxqJZCYRH2cEH4Y7U.WORKE -p x -k -a rx/0
